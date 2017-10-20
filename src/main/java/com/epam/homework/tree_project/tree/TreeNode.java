@@ -50,6 +50,10 @@ public class TreeNode implements Iterable<TreeNode> {
         return children.isEmpty();
     }
 
+    /**
+     * returns iterator over elements of the tree, starting with the current node as a root,
+     * in a certain sequence according to traversal algorithm that was set (DFS by default)
+     */
     @Override
     public Iterator iterator() {
         return new Itr();
