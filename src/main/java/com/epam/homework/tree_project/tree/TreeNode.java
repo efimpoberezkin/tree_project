@@ -5,7 +5,7 @@ import com.epam.homework.tree_project.tree.traversal.TreeTraversalAlgorithm;
 
 import java.util.*;
 
-public class TreeNode implements Iterable<TreeNode> {
+public class TreeNode implements IterableStructure<TreeNode> {
 
     private int data;
     private TreeNode parent;
@@ -42,12 +42,17 @@ public class TreeNode implements Iterable<TreeNode> {
         }
     }
 
-    private boolean isRoot() {
+    public boolean isRoot() {
         return parent == null;
     }
 
-    private boolean isLeaf() {
+    public boolean isLeaf() {
         return children.isEmpty();
+    }
+
+    @Override
+    public void accept(IterableStructureVisitor visitor) {
+        visitor.visit(this);
     }
 
     /**
