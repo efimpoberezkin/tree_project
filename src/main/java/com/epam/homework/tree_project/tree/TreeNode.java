@@ -60,11 +60,11 @@ public class TreeNode implements IterableStructure<TreeNode> {
      * in a certain sequence according to traversal algorithm that was set (DFS by default)
      */
     @Override
-    public Iterator iterator() {
+    public Iterator<TreeNode> iterator() {
         return new Itr();
     }
 
-    private class Itr implements Iterator {
+    private class Itr implements Iterator<TreeNode> {
 
         int cursor;
         List<TreeNode> orderOfTraversal;
