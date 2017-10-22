@@ -7,7 +7,7 @@ import com.epam.homework.tree_project.tree.TreeNode;
 import com.epam.homework.tree_project.tree.traversal.BfsTreeTraversal;
 import com.epam.homework.tree_project.tree.traversal.DfsTreeTraversal;
 
-public class Test {
+public class Client {
 
     public static void main(String[] args) {
         perform_test();
