@@ -42,11 +42,11 @@ public class TreeNode implements IterableStructure<TreeNode> {
         }
     }
 
-    public boolean isRoot() {
+    protected boolean isRoot() {
         return parent == null;
     }
 
-    public boolean isLeaf() {
+    protected boolean isLeaf() {
         return children.isEmpty();
     }
 
