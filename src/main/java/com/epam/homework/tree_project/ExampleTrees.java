@@ -1,10 +1,11 @@
 package com.epam.homework.tree_project;
 
 import com.epam.homework.tree_project.tree.Node;
+import com.epam.homework.tree_project.tree.Tree;
 
 public class ExampleTrees {
 
-    public static Node getTree1() {
+    public static Tree getTree1() {
         Node root = new Node(-1);
         {
             Node node0 = root.addChild(0);
@@ -31,10 +32,11 @@ public class ExampleTrees {
             }
         }
 
-        return root;
+        Tree tree = new Tree(root);
+        return tree;
     }
 
-    public static Node getTree2() {
+    public static Tree getTree2() {
         Node root = new Node(-1);
         {
             Node node0 = root.addChild(0);
@@ -54,6 +56,7 @@ public class ExampleTrees {
             }
         }
 
-        return root;
+        Tree tree = new Tree(root);
+        return tree;
     }
 }
