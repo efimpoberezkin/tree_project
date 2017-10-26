@@ -5,24 +5,24 @@ import com.epam.homework.tree_project.tree.traversal.TreeTraversalAlgorithm;
 
 import java.util.*;
 
-public class TreeNode implements IterableStructure<TreeNode> {
+public class Node implements IterableStructure<Node> {
 
     private int data;
-    private TreeNode parent;
-    private List<TreeNode> children;
+    private Node parent;
+    private List<Node> children;
     private TreeTraversalAlgorithm traversal;
 
-    public TreeNode(int data) {
+    public Node(int data) {
         this.data = data;
         this.children = new ArrayList<>();
     }
 
-    public List<TreeNode> getChildren() {
+    public List<Node> getChildren() {
         return children;
     }
 
-    public TreeNode addChild(int data) {
-        TreeNode childNode = new TreeNode(data);
+    public Node addChild(int data) {
+        Node childNode = new Node(data);
         childNode.parent = this;
         this.children.add(childNode);
         return childNode;
@@ -60,21 +60,21 @@ public class TreeNode implements IterableStructure<TreeNode> {
      * in a certain sequence according to traversal algorithm that was set (DFS by default)
      */
     @Override
-    public Iterator<TreeNode> iterator() {
+    public Iterator<Node> iterator() {
         return new Itr();
     }
 
-    private class Itr implements Iterator<TreeNode> {
+    private class Itr implements Iterator<Node> {
 
         int cursor;
-        List<TreeNode> orderOfTraversal;
+        List<Node> orderOfTraversal;
 
         private Itr() {
             TreeTraversalAlgorithm traversal =
-                    (TreeNode.this.traversal == null)
+                    (Node.this.traversal == null)
                             ? new DfsTreeTraversal() //setting DFS as default traversal algorithm
-                            : TreeNode.this.traversal;
-            orderOfTraversal = traversal.getOrder(TreeNode.this);
+                            : Node.this.traversal;
+            orderOfTraversal = traversal.getOrder(Node.this);
         }
 
         @Override
@@ -83,7 +83,7 @@ public class TreeNode implements IterableStructure<TreeNode> {
         }
 
         @Override
-        public TreeNode next() {
+        public Node next() {
             int i = cursor;
             if (i >= orderOfTraversal.size())
                 throw new NoSuchElementException();

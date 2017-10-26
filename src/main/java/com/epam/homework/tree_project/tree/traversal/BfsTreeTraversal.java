@@ -1,6 +1,6 @@
 package com.epam.homework.tree_project.tree.traversal;
 
-import com.epam.homework.tree_project.tree.TreeNode;
+import com.epam.homework.tree_project.tree.Node;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,13 +10,13 @@ import java.util.Queue;
 public class BfsTreeTraversal implements TreeTraversalAlgorithm {
 
     @Override
-    public List<TreeNode> getOrder(TreeNode root) {
-        List<TreeNode> orderedList = new ArrayList<>();
+    public List<Node> getOrder(Node root) {
+        List<Node> orderedList = new ArrayList<>();
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.remove();
+            Node node = queue.remove();
             orderedList.add(node);
             queue.addAll(node.getChildren());
         }
