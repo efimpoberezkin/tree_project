@@ -6,7 +6,7 @@ import com.epam.homework.tree_project.tree.Tree;
 public class ExampleTrees {
 
     public static Tree getTree1() {
-        Node root = new Node(-1);
+        Node root = new Node(-1, true);
         {
             Node node0 = root.addChild(0);
             Node node1 = root.addChild(1);
@@ -37,7 +37,7 @@ public class ExampleTrees {
     }
 
     public static Tree getTree2() {
-        Node root = new Node(-1);
+        Node root = new Node(-1, true);
         {
             Node node0 = root.addChild(0);
             Node node1 = root.addChild(1);
