@@ -18,11 +18,15 @@ public class DfsTreeTraversal implements TreeTraversalAlgorithm {
         while (!stack.isEmpty()) {
             Node node = stack.pop();
             orderedList.add(node);
-            List children = new ArrayList(node.getChildren());
-            Collections.reverse(children);
-            stack.addAll(children);
+            addReversed(stack, node.getChildren());
         }
 
         return orderedList;
+    }
+
+    private void addReversed(Stack stack, List list) {
+        for (int i = list.size()-1; i>=0; i--) {
+            stack.push(list.get(i));
+        }
     }
 }
